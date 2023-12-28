@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div>
+        <h1 id="title">Movies for You</h1>
+        <p id="untertitel">The best MovieDB</p>
+        <form>
+            <input type="text" name="titelSuche" id="titelSuche">
+            <input type="submit" value="SEARCH" onclick="filterName() ; return false">
+        </form>
+        <div id="sortbuttons">
+            <input type="button" value="YEAR UP" onclick="yearUp() ; return false">
+            <input type="button" value="YEAR DOWN" onclick="yearDown() ; return false">
+            <input type="button" value="BEST RATE" onclick="rateUp() ; return false">
+        </div>
+        <div id="movieOutput"></div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
