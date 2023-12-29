@@ -1000,7 +1000,6 @@ const movies = [
         '8.3'
     ]
 ];
-let input = document.querySelector("#titelSuche")
 let movieOutput = document.querySelector("#movieOutput")
 let refresh = () =>{
     movieOutput.innerHTML = ``
@@ -1025,19 +1024,16 @@ let yearDown = () => {
 let rateUp = () => {
     movies.sort((a, b)=>{
         console.log("check")
-        return a[5]+b[5]
+        return b[5]-a[5]
     })
     refresh()
 }
 let filterName = () =>{
-    console.log("check")
-    console.log(movies)
-    let filter1 = null
-    for (let i = 0; i < movies.length; i++){
-        filter1 = movies[i].filter(movie=> movie[0] == input)
-    }
-    console.log(filter1)
-    refresh()
+    let input = document.querySelector("#titelSuche").value
+    let result = movies.filter((movie) => movie[0].toLowerCase().includes(input.toLowerCase()))
+    console.log(result)
+    movieOutput.innerHTML = `<p>${result}</p>`
+
 }
 for (let i = 0; i < movies.length; i++){
     movieOutput.innerHTML += `<p>${movies[i]}</p>`
